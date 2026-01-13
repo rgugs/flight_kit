@@ -6,6 +6,15 @@ platforms = ["linux-64"]
 version = "0.1.0"
 
 [tasks]
+main = "python src/main.py"
+tests = "pytest"
+
+[activation.env]
+PYTHONPATH = "src"
 
 [dependencies]
-python = "3.12.*"
+python = "3.14.*"
+pytest = "*"
+pandas = ">=2.3.3,<3"
+geopandas = ">=1.1.2,<2"
+
