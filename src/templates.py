@@ -1,5 +1,5 @@
 # KML 
-def mk_kml_main(output_kml_filename: str, kml_placemark_list: list[str]):
+def mk_kml_main(output_filename: str, kml_placemark_list: list[str]):
     """
     Returns string of final kml output to write to file.
     """
@@ -7,9 +7,9 @@ def mk_kml_main(output_kml_filename: str, kml_placemark_list: list[str]):
     <?xml version="1.0" encoding="UTF-8"?>
     <kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
     <Document>
-        <name>{output_kml_filename}.kml</name>
+        <name>{output_filename}.kml</name>
         <Folder>
-            <name>{output_kml_filename}</name>
+            <name>{output_filename}</name>
             {kml_placemark_list}
         </Folder>
     </Document>
@@ -29,7 +29,7 @@ def mk_kml_placemark(waypoint_id: str, longitude: float, latitude: float, altitu
     """
 
 # FPL
-def mk_fpl_main(date_time_zulu: str, fpl_waypoint_list: list[str], waypoint_prefix: str, fpl_route_list: list[str]):
+def mk_fpl_main(date_time_zulu: str, waypoint_prefix: str, fpl_waypoint_list: list[str],  fpl_route_list: list[str]):
     """
     Returns string of final fpl output to write to file.
     """
